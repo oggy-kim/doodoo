@@ -1,0 +1,120 @@
+.todo-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 3px;
+    padding: 5px 20px;
+    height: 30px;
+}
+
+.todo-item.true {
+    color: rgb(190, 190, 190);
+}
+
+.todo-item.true .item-content {
+    text-decoration: line-through;
+}
+
+.todo-item span {
+    margin: 0 3px;
+}
+
+.todo-item span:hover {
+    cursor: pointer;
+}
+
+.todo-item:hover {
+    background-color: rgb(238, 238, 238);
+    transition: all 0.3s;
+}
+
+.todo-item:hover>.item-delete {
+    visibility: visible;
+}
+
+
+.todo-item :nth-child(2) {
+    margin-left: 10px;
+    margin-right: 15px;
+}
+
+.todo-item :nth-child(2):hover {
+    font-weight: 700;
+}
+
+.todo-item .item-delete {
+    visibility: hidden;
+    margin-right: auto;
+}
+
+.todo-item.none {
+    padding-top: 20px;
+    align-self: center;
+}
+
+.todo-item .item-grouptitle {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.todo-item .item-time {
+    font-size: 0.7em;
+}
+
+.todo-item .item-user {
+    font-size: 0.7em;
+}
+
+.todo-item img {
+    height: 35px;
+    width: 35px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.todo-item svg {
+    cursor: pointer;
+}
+
+path {
+    pointer-events: none;
+}
+
+.create-item-form {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    margin: 10px 20px 30px 20px;
+    position: relative;
+    height: 40px
+}
+
+.create-item-form>div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.create-item-form select {
+    margin-right: 10px;
+    border-radius: 5px;
+    min-width: 150px;
+    padding: 0 10px 0 10px;
+    text-align: center;
+}
+
+.create-item-form input {
+    flex: 1 0 auto;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.create-item-form>span {
+    position: absolute;
+    top: 40px;
+    left: 20%;
+    color: red;
+    font-weight: 700;
+    font-size: 0.7em;
+}

@@ -1,0 +1,68 @@
+/* nav {
+    height: 100vh;
+    flex: 0 0 var(--nav-size);
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    color: var(--font-second-color);
+}
+
+nav>div {
+    margin-top: var(--header-height);
+    flex: 1 0 auto;
+}
+
+nav div div {
+    margin-top: 20px;
+}
+
+nav div div {
+    font-size: 1.5em;
+}
+
+nav div ul {
+    list-style-type: none;
+}
+
+nav div ul li {
+    padding-left: 20px;
+    font-size: 0.7em;
+}
+*/
+
+.nav-container {
+    display: flex;
+    transition: all 0.3s ease;
+    flex-direction: column;
+}
+
+.nav-container>div {
+    flex: 1 0 auto;
+}
+
+.nav-container div div {
+    padding-top: 10px;
+}
+
+.nav-container .MuiDrawer-paperAnchorLeft {
+    left: 0;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.nav-drawer div a {
+    align-self: center;
+}
+
+.nav-drawer div button {
+    margin: 10px;
+}
+
+.group-container {
+    flex: 1 0 auto;
+}
+
+#doodoo-img {
+    width: var(--nav-size);
+    height: auto;
+}

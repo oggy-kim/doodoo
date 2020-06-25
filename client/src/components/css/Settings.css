@@ -1,0 +1,304 @@
+content {
+    display: flex;
+    flex-direction: column;
+}
+
+content h2 {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+content .none {
+    align-self: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+content .user-information {
+    display: flex;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+content .user-information img {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    margin: 0 30px 0 150px;
+    border-radius: 50%;
+    border: 1px gray;
+}
+
+content .user-information>div {
+    align-self: center;
+}
+
+content .change-password-form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+content .change-password-form>div {
+    display: flex;
+    padding: 10px;
+    height: 30px;
+    align-items: stretch;
+}
+
+content .change-password-form label {
+    flex: 0 0 200px;
+    font-weight: 500;
+    align-self: center;
+    align-items: flex-end;
+    text-align: right;
+    margin-right: 20px;
+}
+
+content .change-password-form input {
+    flex: 1 0 30%;
+}
+
+content .change-password-form>span {
+    margin-left: 250px;
+    color: red;
+    font-weight: 600;
+    font-size: 0.7em;
+
+}
+
+content .button-container {
+    justify-content: center;
+}
+
+content .button-container button {
+    margin-right: 20px;
+}
+
+content .button-container button span {
+    pointer-events: none;
+}
+
+
+
+
+
+/* 두두 관리 */
+content .group {
+    display: flex;
+    margin-left: 40px;
+    height: 40px;
+}
+
+content .group * {
+    align-self: center;
+}
+
+content .group .group-color {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+
+content .group .group-title {
+    margin-right: auto;
+}
+
+content .group:hover {
+    background-color: rgb(238, 238, 238);
+    transition: all 0.3s;
+}
+
+content .group:hover>.group-title {
+    font-weight: 700;
+    transition: all 0.3s;
+}
+
+content .group img {
+    height: 35px;
+    width: 35px;
+    object-fit: cover;
+    margin: 0 5px 0 10px;
+    border-radius: 50%;
+}
+
+content .group button {
+    margin: 0px 5px 0 5px;
+}
+
+content .group button span {
+    pointer-events: none;
+}
+
+
+
+/* 두두 공유하기 모달 */
+.share-doodoo {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 350px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--background-color);
+    box-shadow: 5px 5px 10pxf rgba(0, 0, 0, 0.5);
+}
+
+.share-doodoo .group {
+    display: flex;
+}
+
+.share-doodoo .group .group-color {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.share-doodoo form {
+    display: flex;
+    align-items: center;
+    height: 25px;
+    padding: 5px;
+    margin: 15px 0 10px 0;
+}
+
+.share-doodoo form>div {
+    margin-right: 10px;
+    height: 100%;
+    position: relative;
+}
+
+.share-doodoo form>div>div {
+    height: 100%;
+}
+
+.share-doodoo form>div span {
+    color: red;
+    font-weight: 600;
+    font-size: 0.6em;
+    position: absolute;
+    top: 30px;
+}
+
+.find-user-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8em;
+}
+
+.find-user-result .user {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.share-doodoo form input {
+    margin-right: 10px;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+
+
+.find-user-result img {
+    height: 30px;
+    width: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.request-share-form {
+    display: flex;
+    height: 25px;
+}
+
+
+
+
+
+/* 프로필 변경 */
+content.setting h3 {
+    margin-left: 150px;
+    margin-bottom: 20px;
+}
+
+content.setting h3.moveleft {
+    margin: 20px 0 20px 30px;
+}
+
+content .user-information .user-nickname {
+    display: flex;
+    flex-direction: column;
+}
+
+content .user-information .user-nickname p:last-child {
+    cursor: pointer;
+    color: rgb(16, 12, 224);
+    font-size: 0.8em;
+}
+
+content .user-information .user-nickname p:last-child:hover {
+    font-weight: 700;
+}
+
+
+/* modal */
+.change-profile {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--background-color);
+    box-shadow: 5px 5px 10pxf rgba(0, 0, 0, 0.5);
+}
+
+.change-profile button {
+    width: 100%;
+    margin: 10px 0 10px 0;
+}
+
+
+.change-profile .preview {
+    object-fit: cover;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.change-profile .change-profilepic-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.change-profile .change-profilepic-form img.profile-preview {
+    object-fit: cover;
+    width: 150px;
+    height: 150px;
+}
+
+content.setting>button {
+    margin-left: 150px;
+    width: 30px;
+}

@@ -1,0 +1,130 @@
+content {
+    padding: 10px 50px;
+    font: var(--font-color);
+    overflow-y: auto;
+}
+
+.basic-info {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    padding: 20px 0;
+    justify-content: space-around;
+    min-height: 250px;
+}
+
+
+.basic-info h3 {
+    margin: 0px 0px 15px 10px;
+    font-size: 20px;
+}
+
+.basic-info>div {
+    background-color: var(--background-color);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    line-height: 1.5;
+}
+
+.basic-info .today-one-word {
+    flex: 0 0 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.basic-info .today-one-word p {
+    align-self: center;
+    margin-top: 20px;
+    margin-bottom: auto;
+}
+
+.basic-info .today-one-word small {
+    flex: 0 0 20px;
+    margin-right: 20px;
+    text-align: right;
+}
+
+
+
+
+
+
+
+
+
+.basic-info .today-weather {
+    flex: 0 0 40%;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8em;
+}
+
+
+.basic-info .today-weather .spinner {
+    align-self: center;
+}
+
+.today-weather .weather-info.top {
+    display: flex;
+    align-content: center;
+}
+
+.today-weather .weather-info.top .address {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.today-weather .weather-info.top .nowtemp {
+    text-align: center;
+    align-self: center;
+    flex: 0 0 50%;
+}
+
+.today-weather .weather-info.bottom {
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+}
+
+.today-weather .weather-info.bottom p {
+    align-self: center;
+}
+
+.today-weather .weather-info.bottom>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.today-weather .weather-info.bottom>div>div {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+}
+
+.today-weather .weather-info.bottom>div>div>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.today-weather .weather-info.bottom img {
+    width: 8vh;
+}
+
+.favorite-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.favorite-list .spinner {
+    align-self: center;
+    padding-top: 20px;
+}
+
+h3 {
+    margin: 10px 20px;
+}

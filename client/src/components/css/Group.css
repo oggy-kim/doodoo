@@ -1,0 +1,159 @@
+section {
+    overflow-y: auto;
+}
+
+.creategroup {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--background-color);
+    box-shadow: 5px 5px 10pxf rgba(0, 0, 0, 0.5);
+}
+
+
+.create-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin: 10px;
+}
+
+.create-form>* {
+    margin-top: 10px;
+}
+
+.create-form input {
+    flex: 0 0 30px;
+    padding: 5px;
+}
+
+.create-form textarea {
+    padding: 5px;
+}
+
+.create-form button.MuiButtonBase-root {
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.creategroup .color-select {
+    flex: 0 0 30px;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.color-detail {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 2px solid gray;
+}
+
+radio-button {
+    padding: 10px;
+}
+
+.group-container {
+    margin-left: 20px;
+}
+
+.group-container ul {
+    font-size: 1.6em;
+    font-weight: 600;
+    margin-bottom: 30px;
+
+}
+
+.group-container ul li:first-child {
+    margin-top: 10px;
+}
+
+.group-container ul li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: 500;
+    font-size: 0.5em;
+    padding: 5px;
+}
+
+.group-container ul li a:hover {
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+.group-container ul li span {
+    margin: 0 5px;
+}
+
+
+.side-group-color {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+
+
+
+.create-form .radio-color {
+    border-radius: 50%;
+}
+
+
+/* Section  */
+.group-detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.group-info {
+    border-radius: 20px;
+    padding: 30px 30px 15px 30px;
+    margin: 20px;
+}
+
+.group-detail h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.group-detail p {
+    padding: 10px 10px 15px 10px;
+}
+
+.group-detail .spinner {
+    align-self: center;
+    padding-top: 10px;
+}
+
+.group-detail .group-members {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    margin: 0 0 0 10px;
+    height: 40px;
+
+}
+
+.group-detail .group-members img {
+    margin-left: 10px;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.recycle-bin {
+    list-style-type: none;
+}
