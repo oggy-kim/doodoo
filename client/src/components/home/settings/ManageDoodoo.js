@@ -13,6 +13,7 @@ import {
 } from '../../../actions';
 
 import ShareDoodooModal from './ShareDoodooModal';
+import variable from '../../../config/variable';
 
 export default () => {
   const myList = useSelector((state) => state.group);
@@ -103,8 +104,8 @@ export default () => {
             title={groupId._shareUser.nickname}
             src={
               groupId._shareUser.profilepic === true
-                ? `/images/profileimg/${groupId._shareUser._id}.png`
-                : `/images/profileimg/basic.png`
+                ? `${variable.imageUrl}/profileimg/${groupId._shareUser._id}.png`
+                : `${variable.imageUrl}/profileimg/basic.png`
             }
           />
           <small>{groupId._shareUser.nickname} 님과 &nbsp;</small>
@@ -117,8 +118,8 @@ export default () => {
             title={groupId._user.nickname}
             src={
               groupId._user.profilepic === true
-                ? `/images/profileimg/${groupId._user._id}.png`
-                : `/images/profileimg/basic.png`
+                ? `${variable.imageUrl}/profileimg/${groupId._user._id}.png`
+                : `${variable.imageUrl}/profileimg/basic.png`
             }
           />
           <small>{groupId._user.nickname} 님과 &nbsp; </small>

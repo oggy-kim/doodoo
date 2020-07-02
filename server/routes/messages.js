@@ -7,11 +7,6 @@ const Item = mongoose.model('items');
 const Group = mongoose.model('groups');
 const Message = mongoose.model('messages');
 
-/* GET users listing. */
-router.get('/', (req, res) => {
-  res.send('hi');
-});
-
 router.post('/user/:_user', async (req, res) => {
   const _user = req.params._user;
   const { _group, requestMessage, _shareUser } = req.body;
@@ -24,9 +19,7 @@ router.post('/user/:_user', async (req, res) => {
   });
 
   const sharedGroup = await Group.findOne({ _id: _group });
-  console.log(sharedGroup);
   const sendMessage = await message.save();
-  console.log(sendMessage);
   sharedGroup._message = sendMessage._id;
   const result = await sharedGroup.save();
 

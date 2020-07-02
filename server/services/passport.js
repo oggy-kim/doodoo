@@ -24,7 +24,7 @@ passport.use(
     {
       clientID: keys.kakaoClientKey,
       clientSecret: '',
-      callbackURL: 'http://localhost:3050/api/auth/kakao/callback',
+      callbackURL: keys.kakaoRedirectURL,
     },
     async (accessToken, refreshToken, profile, done) => {
       const existingUser = await User.findOne({
@@ -45,21 +45,21 @@ passport.use(
               ? profile._json.kakao_account.email
               : undefined,
           status: false,
-          profilepic: profile._json.properties.profile_image ? true : false,
+          // profilepic: profile._json.properties.profile_image ? true : false,
         }).save();
 
-        await request(
-          profile._json.properties.profile_image,
-          { encoding: 'binary' },
-          function (error, response, body) {
-            fs.writeFile(
-              `./public/images/profileimg/${user._id}.png`,
-              body,
-              'binary',
-              function (err) {}
-            );
-          }
-        );
+        // await request(
+        //   profile._json.properties.profile_image,
+        //   { encoding: 'binary' },
+        //   function (error, response, body) {
+        //     fs.writeFile(
+        //       `./public/images/profileimg/${user._id}.png`,
+        //       body,
+        //       'binary',
+        //       function (err) {}
+        //     );
+        //   }
+        // );
 
         done(null, user);
       }

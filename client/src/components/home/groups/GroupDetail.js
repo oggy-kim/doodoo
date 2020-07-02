@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import Loading from '../../../components/common/Loading';
 import SnackBar from '../components/SnackBar';
+import variable from '../../../config/variable';
 
 export default () => {
   const { id } = useParams();
@@ -48,10 +49,10 @@ export default () => {
             }
             src={
               myGroupId._user.profilepic
-                ? `/images/profileimg/${
+                ? `${variable.imageUrl}/profileimg/${
                     myGroupId._user._id
                   }.png?t=${Date.now()}`
-                : `/images/profileimg/basic.png`
+                : `${variable.imageUrl}/profileimg/basic.png`
             }
           />
           <img
@@ -64,10 +65,10 @@ export default () => {
             }
             src={
               myGroupId._shareUser.profilepic
-                ? `/images/profileimg/${
+                ? `${variable.imageUrl}/profileimg/${
                     myGroupId._shareUser._id
                   }.png?t=${Date.now()}`
-                : `/images/profileimg/basic.png`
+                : `${variable.imageUrl}/profileimg/basic.png`
             }
           />
         </div>

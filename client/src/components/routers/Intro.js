@@ -26,19 +26,9 @@ class Intro extends Component {
     document.getElementById('root').style.backgroundImage = `url(${
       response.data.results[`${todayNum}`].urls.raw
     }&q=80&fm=jpg&fit=max&auto=format)`;
-    console.log(response.data.results[`${todayNum}`].description);
-    console.log(response.data.results[`${todayNum}`].user.name);
-    console.log(response.data.results[`${todayNum}`].user.links.html);
 
     var background = document.createElement('div');
     background.id = 'unsplash-info';
-
-    var description = document.createElement('div');
-    description.className = 'description';
-    var descriptionText = document.createTextNode(
-      response.data.results[`${todayNum}`].description
-    );
-    description.appendChild(descriptionText);
 
     var name = document.createElement('div');
     name.className = 'name';
@@ -55,10 +45,7 @@ class Intro extends Component {
     );
     link.appendChild(linkText);
 
-    document
-      .getElementById('root')
-      .appendChild(background)
-      .appendChild(description);
+    document.getElementById('root').appendChild(background);
     document.getElementById('unsplash-info').appendChild(link);
   };
 

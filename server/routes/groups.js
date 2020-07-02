@@ -6,14 +6,7 @@ const Group = mongoose.model('groups');
 const Item = mongoose.model('items');
 const requireLogin = require('../middlewares/requireLogin');
 
-router.get('/', (req, res) => {
-  res.send('hi');
-});
-
 router.post('/add', requireLogin, async (req, res) => {
-  console.log('Received!');
-  console.log(req.body);
-  console.log(req.user);
   const { _id, title, description, groupColor } = req.body;
   const group = new Group({
     title,
@@ -31,14 +24,12 @@ router.post('/add', requireLogin, async (req, res) => {
       .populate('_shareUser', 'profilepic nickname');
   }
 
-  console.log(myList);
   res.send({
     myList,
   });
 });
 
 router.post('/:groupId/items/add', requireLogin, async (req, res) => {
-  console.log('item add Received!');
   const { _id, content } = req.body;
   const newItem = new Item({
     content,
@@ -48,8 +39,6 @@ router.post('/:groupId/items/add', requireLogin, async (req, res) => {
     modifyDate: Date(),
   });
 
-  console.log(newItem);
-
   const result = await newItem.save();
   const addedItem = await Item.find({ _id: newItem._id })
     .populate('_user', 'nickname profilepic')
@@ -58,8 +47,6 @@ router.post('/:groupId/items/add', requireLogin, async (req, res) => {
 });
 
 router.patch('/:groupId/items/:itemId', requireLogin, async (req, res) => {
-  console.log('patch request received!');
-  console.log(req.params.groupId);
   const { changedValue } = req.body;
 
   let editedItem = '';
@@ -93,7 +80,6 @@ router.patch('/:groupId/items/:itemId', requireLogin, async (req, res) => {
     const groupItems = await selectedItems.filter((item) => {
       return item._group;
     });
-    console.log(groupItems);
     res.send({
       groupItems,
     });
@@ -115,9 +101,7 @@ router.patch('/:groupId/items/:itemId', requireLogin, async (req, res) => {
 });
 
 router.delete('/:groupId/items/:itemId', requireLogin, async (req, res) => {
-  console.log('delete request received!');
   const deleteItem = await Item.findOne({ _id: req.params.itemId });
-  console.log(deleteItem);
   deleteItem.status = false;
   await deleteItem.save();
 
@@ -125,7 +109,6 @@ router.delete('/:groupId/items/:itemId', requireLogin, async (req, res) => {
 });
 
 router.get('/:_id', async (req, res) => {
-  console.log('Group Received!');
   if (req.params._id === 'recyclebin') {
     const selectedItems = await Item.find({ status: false })
       .populate({
@@ -142,7 +125,6 @@ router.get('/:_id', async (req, res) => {
     const groupItems = await selectedItems.filter((item) => {
       return item._group;
     });
-    console.log(groupItems);
     res.send({
       groupItems,
     });
@@ -163,8 +145,6 @@ router.get('/:_id', async (req, res) => {
 });
 
 router.patch('/:groupId', async (req, res) => {
-  console.log('Group Edit Received!');
-
   switch (req.body.type) {
     case 'disconnect':
       const group = await Group.findOneAndUpdate(
@@ -176,7 +156,6 @@ router.patch('/:groupId', async (req, res) => {
 });
 
 router.delete('/:groupId', async (req, res) => {
-  console.log('Group Delete Received!');
   const deleteItems = await Item.deleteMany({ _group: req.params.groupId });
   const deletedGroup = await Group.findOneAndDelete({
     _id: req.params.groupId,
@@ -208,8 +187,6 @@ router.get('/user/:_id/items/favorite', async (req, res) => {
 });
 
 router.get('/user/:_id', async (req, res) => {
-  console.log('Received!');
-  console.log(req.params._id);
   let myList = await Group.find({
     $or: [{ _shareUser: req.params._id }, { _user: req.params._id }],
   })

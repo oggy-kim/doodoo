@@ -133,7 +133,6 @@ export const fetchItems = (id) => async (dispatch, getState) => {
 export const fetchFavoriteItems = () => async (dispatch, getState) => {
   const { _id } = getState().auth;
   const res = await axios.get(`/api/groups/user/${_id}/items/favorite`);
-  console.log(res.data);
   dispatch({ type: FETCH_FAVORITE_ITEMS, payload: res.data.favoriteItems });
 };
 
@@ -243,7 +242,6 @@ export const joinViaSNS = (formValues) => async (dispatch, getState) => {
         dispatch({ type: SHOW_ERROR, payload: error.response.data.message });
       }
     });
-  console.log(res);
 
   if (res) {
     dispatch({ type: FETCH_USER, payload: res.data.user });
@@ -297,7 +295,6 @@ export const deleteMessage = (messageId) => async (dispatch) => {
 
 export const sendShareResponse = (type, messageId) => async (dispatch) => {
   const res = await axios.post(`/api/messages/${messageId}`, { type });
-  console.log(res.data);
   dispatch({ type: FETCH_MESSAGES, payload: res.data.message });
   dispatch({ type: FETCH_GROUPS, payload: res.data.myList });
 };

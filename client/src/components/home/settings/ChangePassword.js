@@ -4,6 +4,7 @@ import '../../css/Settings.css';
 import ChangePasswordForm from './ChangePasswordForm';
 
 import { changePassword, editProfile } from '../../../actions';
+import variable from '../../../config/variable';
 
 export default () => {
   const dispatch = useDispatch();
@@ -28,8 +29,10 @@ export default () => {
                 alt='profile pic'
                 src={
                   profilepic
-                    ? `/images/profileimg/${_id}.png?t=${Date.now()}`
-                    : `/images/profileimg/basic.png`
+                    ? `${
+                        variable.imageUrl
+                      }/profileimg/${_id}.png?t=${Date.now()}`
+                    : `${variable.imageUrl}/profileimg/basic.png`
                 }
               />
               <div>{nickname}</div>

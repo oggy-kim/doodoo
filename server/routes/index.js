@@ -9,12 +9,6 @@ var coordToAddress = require('../apis/coordToAddress');
 
 require('moment-timezone');
 
-/* GET home page. */
-router.get('/', function (req, res, next) {
-  res.send('hi?');
-  // res.render('index', { title: 'Express' });
-});
-
 router.get('/weatherinfo', async (req, res) => {
   console.log('weather forecast came! ');
   const address = await coordToAddress(req.query.latitude, req.query.longitude);

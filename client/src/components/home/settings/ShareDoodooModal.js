@@ -9,6 +9,7 @@ import SelectProfile from '../../common/SelectProfile';
 import FindUserForm from '../components/FindUserForm';
 import RequestShareForm from '../components/RequestShareForm';
 import { set } from 'lodash';
+import variable from '../../../config/variable';
 
 const ShareDoodooModal = ({ dispatch, open, group }) => {
   const auth = useSelector((state) => state.auth);
@@ -51,8 +52,10 @@ const ShareDoodooModal = ({ dispatch, open, group }) => {
                 }
                 src={
                   shareUser.profilepic
-                    ? `/images/profileimg/${shareUser._id}.png?t=${Date.now()}`
-                    : `/images/profileimg/basic.png`
+                    ? `${variable.imageUrl}/profileimg/${
+                        shareUser._id
+                      }.png?t=${Date.now()}`
+                    : `${variable.imageUrl}/profileimg/basic.png`
                 }
               />{' '}
               <p>{shareUser.nickname} 님에게</p>

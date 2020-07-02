@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Drawer from '@material-ui/icons/List';
 import Button from '@material-ui/core/Button';
-
+import variable from '../../config/variable';
 import { toggleNav, fetchMessages, sendShareResponse } from '../../actions';
 import Loading from '../common/Loading';
 
@@ -43,10 +43,10 @@ class Header extends Component {
                 alt='profile pic'
                 src={
                   this.props.auth.profilepic
-                    ? `/images/profileimg/${
+                    ? `${variable.imageUrl}/profileimg/${
                         this.props.auth._id
                       }.png?t=${Date.now()}`
-                    : `/images/profileimg/basic.png`
+                    : `${variable.imageUrl}/profileimg/basic.png`
                 }
               />
               <div className='user-bar'>
@@ -100,10 +100,10 @@ class Header extends Component {
               title={this.props.message[_id]._user.nickname}
               src={
                 this.props.message[_id]._user.profilepic
-                  ? `/images/profileimg/${
+                  ? `${variable.imageUrl}/profileimg/${
                       this.props.message[_id]._user._id
                     }.png?t=${Date.now()}`
-                  : `/images/profileimg/basic.png`
+                  : `${variable.imageUrl}/profileimg/basic.png`
               }
             />
             <span className='request-content bubble'>

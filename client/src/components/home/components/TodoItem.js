@@ -11,6 +11,7 @@ import RestoreIcon from '@material-ui/icons/Restore';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import { Link, useParams } from 'react-router-dom';
 import { editItem, deleteItem, fetchFavoriteItems } from '../../../actions';
+import variable from '../../../config/variable';
 
 import moment from 'moment';
 import 'moment/locale/ko';
@@ -102,8 +103,8 @@ export default ({
         key={profilepic === 'true' ? `profile ${userId}` : `profile basic`}
         src={
           profilepic === 'true'
-            ? `/images/profileimg/${userId}.png?t=${Date.now()}`
-            : `/images/profileimg/basic.png`
+            ? `${variable.imageUrl}/profileimg/${userId}.png?t=${Date.now()}`
+            : `${variable.imageUrl}/profileimg/basic.png`
         }
       />
       <Link to={`/groups/${groupId}`}>
