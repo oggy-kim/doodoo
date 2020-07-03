@@ -14,7 +14,7 @@ let s3 = new AWS.S3();
 
 const storage = multerS3({
   s3: s3,
-  bucket: 'doodoo-dev',
+  bucket: process.env.NODE_ENV === 'production' ? 'doodoo-prod' : 'doodoo-dev',
   contentType: multerS3.AUTO_CONTENT_TYPE,
   acl: 'public-read-write',
   key: (req, file, cb) => {
